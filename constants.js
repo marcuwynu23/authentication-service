@@ -1,3 +1,3 @@
 module.exports = {
-  TITLE: "Mini Node Project"
+  TITLE: "Authentication Application"
 }

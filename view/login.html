@@ -1,0 +1,14 @@
+{% extends 'initial/layout.html' %}
+{% block content %}
+  <div class="container p-4">
+    <h1 class="text-center m-2 fw-bold">Login</h1>
+    <form method="post">
+        <input class="form-control my-2" name="username" type="text" placeholder="username">
+        <input class="form-control my-2" name="password" type="password" placeholder="password">
+        <button class="form-control my-2 btn btn-primary " type="submit">submit</button>
+    </form>
+    {% if isError %}
+      <p class="text-danger">Login Error. wrong username or password.</p>
+    {% endif %}
+  </div>
+{% endblock %}

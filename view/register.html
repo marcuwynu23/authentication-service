@@ -1,0 +1,29 @@
+{% extends 'initial/layout.html' %}
+{% block content %}
+<div class="container p-4">
+	<div class="form-group">
+		<h1 class="text-center m-2 fw-bold">Register</h1>
+		<form method="post">
+			<input class="form-control my-2" name="firstName" type="text" placeholder="First Name">
+			<input class="form-control my-2" name="middleName" type="text" placeholder="Middle Name">
+			<input class="form-control my-2" name="lastName" type="text" placeholder="Last Name">
+			<input class="form-control my-2" name="birthday" type="date" name="birthday" placeholder="Birthday">
+			<input class="form-control my-2" name="houseAddr" type="text" placeholder="House Address">
+			<input class="form-control my-2" name="city" type="text" placeholder="City">
+			<input class="form-control my-2" name="province" type="text" placeholder="Province">
+			<input class="form-control my-2" name="email" type="email" placeholder="Email">
+			<input class="form-control my-2" name="username" type="text" placeholder="username">
+			<input class="form-control my-2" name="password1" type="password" placeholder="password">
+			<input class="form-control my-2" name="password2" type="password" placeholder="password">
+			<button class="form-control my-2 btn-primary btn-lg" type="submit">register</button>
+		</form>
+	</div>
+
+	{% if isSuccess %}
+	<p class="text-success">Register successfully.</p>
+	{% endif %}
+	{% if isError %}
+	<p class="text-danger">Register Error. wrong data inserted.</p>
+	{% endif %}
+</div>
+{% endblock %}

@@ -5,14 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "wr http://localhost:9000 && nodemon index.js"
+    "dev": "wr http://localhost:9000 && nodemon index.js",
+    "start": "node index.js"
+    
   },
   "author": "Mark Wayne Menorca",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.1",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
+    "googleapis": "^105.0.0",
+    "mongodb": "^4.8.0",
     "morgan": "^1.10.0",
+    "nodemailer": "^6.7.7",
     "nodemon": "^2.0.15",
     "nunjucks": "^3.2.3"
   }

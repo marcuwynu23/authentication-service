@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 
 const path = require("path")
 const express = require("express");
@@ -5,6 +7,12 @@ const session = require("express-session")
 const nunjucks = require("nunjucks")
 const constants = require("./constants")
 const logger = require('morgan')
+
+
+
+
+const {loginRoute, recoveryRoute, registerRoute} = require("./route/route")
+
 
 const app = express()
 nunjucks.configure(path.resolve(__dirname,'view'),{
@@ -26,16 +34,20 @@ app.use(session({
 app.use(express.static(path.join(__dirname,'public')))
 
 app.get("/",(req,res)=>{
-  return res.render("index.html",{context: {
-    title: constants.TITLE
-  }});
+  return res.render("index.html",{})
 })
 
-const PORT = 9000;
-app.listen(process.env.PORT || PORT,(err)=>{
+
+app.use("/login",loginRoute)
+app.use("/register",registerRoute)
+app.use("/recovery",recoveryRoute)
+
+
+
+app.listen(process.env.PORT,(err)=>{
   if(err){
     console.log(err)
    }else{
-    console.log(`Running Server on ${PORT}...`)
+    console.log(`Web Server: Running on Port ${process.env.PORT}...`)
    }
 });

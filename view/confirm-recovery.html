@@ -1,0 +1,14 @@
+{% extends 'initial/layout.html' %}
+{% block content %}
+  <div class="container">
+    <h1 class="text-center m-2 fw-bold">Confirm Recovery</h1>
+    <form method="post">
+      <div>
+        <input class="form-control my-2" name="recoveryCode" type="text" placeholder="Recovery Code">
+        <input class="form-control my-2" name="password1" type="password" placeholder="Password">
+        <input class="form-control my-2" name="password2" type="password" placeholder="Retry Password">
+        <button class="form-control my-2 btn btn-primary" type="submit">recover</button>
+      </div>
+    </form>
+  </div>
+{% endblock %} 
